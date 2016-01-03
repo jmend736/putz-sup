@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "vote/base.html" %}
+
+{% block title %}Questions{% endblock title %}
+
+{% block body %}
+<h1>Putz Superlatives</h1>
+<form action="/vote/submit/" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+    {% for question in question_list %}
+    {{ question.quest_text }} <br>
+    <input type="text" name="{{ question.quest_text }}"> <br>
+    <br>
+    {% endfor %}
+    <p><input type="submit" value="Continue →"></p>
+</form>
+
+</table>
+{% endblock body %}

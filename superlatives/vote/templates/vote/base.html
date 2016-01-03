@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title%}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static "vote/base.css" %}" type="text/css" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        {% block body %}
+            Test Body
+        {% endblock body %}
+    </body>
+</html>
