@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from .models import Question, Answer, Submitter
+from .models import Question, Answer
 
+admin.AdminSite.site_header = "Putz Superlatives"
 
 
 class AnswerInline(admin.TabularInline):
@@ -19,4 +20,3 @@ class AnswerAdmin(admin.ModelAdmin):
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer, AnswerAdmin)
-admin.site.register(Submitter)

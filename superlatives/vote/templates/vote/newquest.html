@@ -1,0 +1,21 @@
+{% extends "vote/base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+New Question
+{% endblock title %}
+
+{% block header %}
+    <h1>This should be Orange</h1>
+{% endblock header %}
+
+{% block body %}
+<h1>Submit a New Question</h1>
+<form action="/vote/newquest/" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+    New Question: <br\ >
+    <input type="text" name="new_quest"
+   size="40" />
+    <p><input type="submit" value="Continue →"></p>
+</form>
+{% endblock body %}

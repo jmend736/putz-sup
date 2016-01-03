@@ -7,8 +7,13 @@
         <link rel="stylesheet" href="{% static "vote/base.css" %}" type="text/css" media="screen" title="no title" charset="utf-8">
     </head>
     <body>
-        {% block body %}
-            Test Body
-        {% endblock body %}
+        <div id="header">
+            {% block header %}
+            {% endblock header %}
+        </div>
+        <div id="body">
+            {% block body %}
+            {% endblock body %}
+        </div>
     </body>
 </html>

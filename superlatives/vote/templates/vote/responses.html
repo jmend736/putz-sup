@@ -1,0 +1,21 @@
+{% extends "vote/base.html" %}
+
+{% block title%}
+Responses
+{% endblock title%}
+
+{% block body %}
+    {% for question in all_questions %}
+        <ul>
+            <li>{{ question }}</li>
+            <ul>
+                {% for ans in question.answers %}
+                <li>
+                    {{ ans }}
+                </li>
+                {% endfor %}
+            </ul>
+        </ul>
+    {% endfor %}
+{% endblock body %}
+
