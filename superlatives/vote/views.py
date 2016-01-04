@@ -13,7 +13,7 @@ def index(request):
     Show the number of visits
     # Show the current number of people on the site
     """
-    return HttpResponse("This is the index page.")
+    return render(request, "vote/index.html", )
 
 
 def questions(request):

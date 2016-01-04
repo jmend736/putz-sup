@@ -5,15 +5,51 @@
         <meta charset="utf-8">
         <title>{% block title%}{% endblock %}</title>
         <link rel="stylesheet" href="{% static "vote/base.css" %}" type="text/css" media="screen" title="no title" charset="utf-8">
-    </head>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+        </head>
     <body>
+
         <div id="header">
+
             {% block header %}
+            <table border="0" cellspacing="5" cellpadding="5">
+                <tr>
+                    <td width="20%"> <h1> Superlatives </h1> </td>
+                    <td width="40%"></td>
+                    <td width="9%" class="lato" target="_self">
+                        <a href="/vote/">Home</a>
+                    </td>
+                    <td width="9%" class="lato">
+                        <a href="/vote/newques" target="_self">
+                            New<br>Question
+                        </a>
+                    </td>
+                    <td width="9%" class="lato">
+                        <a href="/vote/responses/" target="_self">
+                            Results
+                        </a>
+                    </td>
+                    <td width="2%"></td>
+                    <td width="9%" class="lato" style="font-size:150%">
+                        <a href="/vote/list/" target="_self" class="waves-effect waves-light btn" style="background-color:#b21212">VOTE</a>
+                    </td>
+                    <td width="2%"></td>
+                </tr>
+            </table>
             {% endblock header %}
         </div>
+
         <div id="body">
             {% block body %}
             {% endblock body %}
         </div>
+
+        <div id="footer">
+            {% block footer %}
+            {% endblock footer %}
+        </div>
+
     </body>
 </html>

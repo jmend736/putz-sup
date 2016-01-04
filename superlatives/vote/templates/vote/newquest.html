@@ -6,16 +6,16 @@ New Question
 {% endblock title %}
 
 {% block header %}
-    <h1>This should be Orange</h1>
+    <h1>New Question</h1>
 {% endblock header %}
 
 {% block body %}
-<h1>Submit a New Question</h1>
+<h1>Don't make it too stupid</h1>
 <form action="/vote/newquest/" method="post" accept-charset="utf-8">
     {% csrf_token %}
     New Question: <br\ >
     <input type="text" name="new_quest"
    size="40" />
-    <p><input type="submit" value="Continue →"></p>
+    <p><input type="submit" class="waves-effect waves-light btn" value="Submit"></p>
 </form>
 {% endblock body %}
