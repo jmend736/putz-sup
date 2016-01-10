@@ -3,11 +3,13 @@
 Superlatives Implementation in Django
 
 ## TODO
-- Implement Admin Page
-- Test Models
-- Create Basic Views
-- Implement Advanced Views
 - Implement Kerberos Authentication
 
+## WORKING ON
+- Implement Advanced Views
+
 ## DONE
+- Test Models
+- Implement Admin Page
 - Implement Models
+- Create Basic Views
