@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse, HttpResponseRedirect
 from models import Question, Answer
+from putz import Putzen
 
 # Create your views here.
 
@@ -59,14 +60,18 @@ def submit(request):
             # Get answer to form
             ans = request.POST[quest]
 
+
             # Make new answer object
             a = Answer()
-            a.ans_text = ans
 
             # TODO: Save the submitter
             a.ans_sub = "admin"
 
             if quest != "csrfmiddlewaretoken":
+
+                if ans:
+                    filtered_ans = ans.lower().strip()
+                    a.ans_text = Putzen(filtered_ans).name
 
                 # Update the Answers to Seleted Questions
                 i = Question.objects.get(quest_text=quest)

@@ -7,7 +7,7 @@ Responses
 {% block body %}
     {% for question in all_questions %}
         <ul>
-            <li>{{ question }}</li>
+            <li><h4>{{ question }}</h4></li>
             <ul>
                 {% for ans in question.answers %}
                 <li>
@@ -16,6 +16,7 @@ Responses
                 {% endfor %}
             </ul>
         </ul>
+        <hr>
     {% endfor %}
 {% endblock body %}
 
