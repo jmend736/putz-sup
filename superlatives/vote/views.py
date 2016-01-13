@@ -51,37 +51,63 @@ def submit_question(request):
 
 def submit(request):
     """
-    Submit a question
+    Submit a response
     """
     if request.method == "POST":
 
         for quest in request.POST:
 
-            # Get answer to form
-            ans = request.POST[quest]
-
-
-            # Make new answer object
-            a = Answer()
-
-            # TODO: Save the submitter
-            a.ans_sub = "admin"
-
             if quest != "csrfmiddlewaretoken":
 
+                # Get answer to form
+                ans = request.POST[quest]
+
                 if ans:
+                    # TODO: Allow input of a list of names
+                    # Filter the response
                     filtered_ans = ans.lower().strip()
-                    a.ans_text = Putzen(filtered_ans).name
 
-                # Update the Answers to Seleted Questions
-                i = Question.objects.get(quest_text=quest)
+                    # Map to putzen kerberos
+                    try:
+                        putzen = Putzen(filtered_ans).name
+                    except KeyError:
+                        putzen = ans
 
-                # Set the ForeignKey
-                a.ans_quest = i
+                    # Try to increment previous answer
+                    try:
+                        # Get previous answer
+                        prev_answer = Answer.objects.filter(
+                            ans_text=putzen
+                        ).get(
+                            ans_quest__quest_text=quest
+                        )
 
-                # Write to database
+                        # Incremement the counter
+                        prev_answer.ans_count += 1
 
-                a.save()
+                        # Save the model to database
+                        prev_answer.save()
+
+                    except Answer.DoesNotExist:
+                        # If you can't then create a new answer object
+                        # Make new answer object
+                        a = Answer()
+
+                        # TODO: Save the submitter
+                        a.ans_sub = "admin"
+
+                        a.ans_count = 1
+
+                        a.ans_text = putzen
+
+                        # Update the Answers to Seleted Questions
+                        i = Question.objects.get(quest_text=quest)
+
+                        # Set the ForeignKey
+                        a.ans_quest = i
+
+                        # Write to database
+                        a.save()
 
         return HttpResponseRedirect('/vote/list/')
     else:

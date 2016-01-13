@@ -24,6 +24,9 @@ class Question(models.Model):
     def answers(self):
         return Answer.objects.filter(ans_quest=self)
 
+    def answers_dict(self):
+        return {i.ans_text: i for i in self.answers()}
+
     def __unicode__(self):
         return self.quest_text
 
@@ -35,6 +38,7 @@ class Answer(models.Model):
     ans_sub = models.CharField("Submitter", max_length=30,
                                default="admin")
     ans_time = models.DateTimeField(default=timezone.now)
+    ans_count = models.IntegerField(default=1)
 
     def __unicode__(self):
         return self.ans_text

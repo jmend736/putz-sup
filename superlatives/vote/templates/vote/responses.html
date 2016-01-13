@@ -10,9 +10,7 @@ Responses
             <li><h4>{{ question }}</h4></li>
             <ul>
                 {% for ans in question.answers %}
-                <li>
-                    {{ ans }}
-                </li>
+                <li> {{ ans }} {{ ans.ans_count }} </li>
                 {% endfor %}
             </ul>
         </ul>

@@ -4,5 +4,5 @@ haUmanage]Uvote.migrations.0001_initial]qhaUsuperlatives.urls]qUurlpatte
 VoteConfigqaU	vote.putz]q(Uputzen_kerbsqUPutzenqUfUputzenqUfind_putzenqeUvote.migrations]Uvote.models]q(UQuestionqUAnswerqeU'vote.migrations.0005_auto_20160103_0839]qhaU	vote.urls]q(Uapp_nameqheU
 vote.views]q(U	responsesqUindexqUsubmitqUsubmit_questionqU	questionsq eUsuperlatives.settings]q!(U	TEMPLATESq"UAUTH_PASSWORD_VALIDATORSq#UUSE_L10Nq$ULANGUAGE_CODEq%UUSE_TZq&UUSE_I18Nq'U	DATABASESq(U	TIME_ZONEq)U
 STATIC_URLq*UROOT_URLCONFq+UWSGI_APPLICATIONq,UMIDDLEWARE_CLASSESq-UDEBUGq.UALLOWED_HOSTSq/U
-SECRET_KEYq0UBASE_DIRq1UINSTALLED_APPSq2eUvote]Usuperlatives.wsgi]q3Uapplicationq4aU
+SECRET_KEYq0UBASE_DIRq1UINSTALLED_APPSq2eUvote]U%vote.migrations.0007_answer_ans_count]q3haUsuperlatives.wsgi]q4Uapplicationq5aU
 vote.tests]u.
