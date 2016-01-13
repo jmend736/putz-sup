@@ -20,7 +20,7 @@ from django.contrib import admin
 from vote import urls as vote_urls
 
 urlpatterns = [
-    url(r'^$', include(vote_urls)),
+    url(r'^', include(vote_urls)),
     url(r'^admin/', admin.site.urls),
     url(r'^vote/', include(vote_urls)),
 ]
